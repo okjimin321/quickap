@@ -3,8 +3,64 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'firebase_options.dart';
-import 'Chat_List_Screen.dart';
+import 'Chat_List_Screen.dart'; // Chat_List_Screen import 확인
 import 'package:intl/date_symbol_data_local.dart';
+
+// 앱 시작점
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  await initializeDateFormatting();
+  runApp(const MyApp());
+}
+
+// 루트 위젯
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'QUICKAP',
+      theme: ThemeData(
+          primarySwatch: Colors.blue,
+          fontFamily: 'Arial',
+          appBarTheme: const AppBarTheme(
+            titleTextStyle: TextStyle(
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+            iconTheme: IconThemeData(color: Colors.white),
+          )),
+      // [수정] StreamBuilder를 사용하여 로그인 상태에 따라 다른 화면을 보여줍니다.
+      home: StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          // 연결 중일 때 로딩 화면 표시
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Scaffold(
+              backgroundColor: Colors.black,
+              body: Center(
+                child: CircularProgressIndicator(color: Colors.white),
+              ),
+            );
+          }
+          // 로그인 되어 있을 때
+          if (snapshot.hasData) {
+            return const ChatListScreen();
+          }
+          // 로그인 되어 있지 않을 때
+          return const LoginScreen();
+        },
+      ),
+    );
+  }
+}
+
+
+// =================================================================
+// 아래 코드는 기존 코드와 동일합니다. 수정할 필요 없습니다.
+// =================================================================
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -199,8 +255,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
 // 로그인 박스 위젯
 class LoginBox extends StatefulWidget {
-  // [삭제] final List<CameraDescription> cameras;
-  const LoginBox({Key? key}) : super(key: key); // [수정] 생성자 수정
+  const LoginBox({Key? key}) : super(key: key);
 
   @override
   _LoginBoxState createState() => _LoginBoxState();
@@ -219,19 +274,17 @@ class _LoginBoxState extends State<LoginBox> {
   }
 
   Future<void> _signIn() async {
+    // 참고: 로그인 성공 시 화면 전환 코드는 StreamBuilder가 처리하므로 여기서는 필요 없습니다.
+    // StreamBuilder가 상태 변화를 감지하고 자동으로 화면을 바꿔줍니다.
     try {
       await _auth.signInWithEmailAndPassword(
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
       );
+      // 로그인 성공 스낵바는 필요하다면 유지할 수 있습니다.
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('로그인 성공!')),
-        );
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-              builder: (context) => const ChatListScreen()), // [수정] cameras 전달 제거
         );
       }
     } on FirebaseAuthException catch (e) {
@@ -341,43 +394,10 @@ class _LoginBoxState extends State<LoginBox> {
   }
 }
 
-// 앱 시작점
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  WidgetsFlutterBinding.ensureInitialized();
-  await initializeDateFormatting();
-  runApp(const MyApp()); // [수정] cameras 전달 제거
-}
-
-// 앱의 루트 위젯
-class MyApp extends StatelessWidget {
-  // [삭제] final List<CameraDescription> cameras;
-  const MyApp({Key? key}) : super(key: key); // [수정] 생성자 수정
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'QUICKAP',
-      theme: ThemeData(
-          primarySwatch: Colors.blue,
-          fontFamily: 'Arial',
-          appBarTheme: const AppBarTheme(
-            titleTextStyle: TextStyle(
-                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
-            iconTheme: IconThemeData(color: Colors.white),
-          )),
-      home: const LoginScreen(), // [수정] cameras 전달 제거
-    );
-  }
-}
 
 // 로그인 화면 위젯
 class LoginScreen extends StatelessWidget {
-  // [삭제] final List<CameraDescription> cameras;
-  const LoginScreen({Key? key}) : super(key: key); // [수정] 생성자 수정
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -403,7 +423,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                const LoginBox(), // [수정] cameras 전달 제거
+                const LoginBox(),
                 const Spacer(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
