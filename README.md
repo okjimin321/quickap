@@ -99,11 +99,9 @@
 lib/
 ┣ main.dart              # 앱 시작점, 로그인 상태에 따른 라우팅 로직
 ┣ firebase_options.dart    # Firebase 설정 정보
-┣ Add_Friend_Screen.dart   # 친구추가 UI 및 로직
-┣ chat_list_screen.dart # 채팅방 목록 UI
-┣ chat_room_screen.dart # 채팅방 메시지 UI 및 전송 로직
-'''
-
+┣ add_friend_screen.dart   # 친구추가 UI 및 로직
+┣ chat_list_screen.dart    # 채팅방 목록 UI
+┗ chat_room_screen.dart    # 채팅방 메시지 UI 및 전송 로직
 ---
 
 ### 📜 라이선스 (License)
