@@ -22,7 +22,7 @@
   </tr>
   <tr>
     <td><img src="./assets/add_friend.png" alt="친구 추가 화면" height="400"/></td>
-    <td><img src="./assets/chat_room.png" alt="채팅방 화면" height="400"/></td>
+    <td><img src="./assets/chat_page.png" alt="채팅방 화면" height="400"/></td>
     <td><img src="./assets/wait_for_msg.png" alt="전송 대기 화면" height="400"/></td>
   </tr>
 </table>
