@@ -4,8 +4,28 @@
 
 <br>
 
-> [!NOTE]  
-> 여기에 앱의 주요 기능을 보여주는 GIF나 대표 스크린샷을 넣으면 좋습니다. (예: `![quickap-demo](링크)`)
+<table align="center">
+  <tr>
+    <td align="center"><b>로그인</b></td>
+    <td align="center"><b>회원가입</b></td>
+    <td align="center"><b>친구 목록</b></td>
+  </tr>
+  <tr>
+    <td><img src="./assets/Login_Page.png" alt="로그인 화면" height="400"/></td>
+    <td><img src="./assets/Register.png" alt="회원가입 화면" height="400"/></td>
+    <td><img src="./assets/friend_list.png" alt="친구 목록 화면" height="400"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>친구 추가</b></td>
+    <td align="center"><b>채팅방</b></td>
+    <td align="center"><b>전송 대기 메시지</b></td>
+  </tr>
+  <tr>
+    <td><img src="./assets/add_friend.png" alt="친구 추가 화면" height="400"/></td>
+    <td><img src="./assets/chat_room.png" alt="채팅방 화면" height="400"/></td>
+    <td><img src="./assets/wait_for_msg.png" alt="전송 대기 화면" height="400"/></td>
+  </tr>
+</table>
 
 ---
 
