@@ -102,7 +102,7 @@ lib/
 ┣ add_friend_screen.dart   # 친구추가 UI 및 로직
 ┣ chat_list_screen.dart    # 채팅방 목록 UI
 ┗ chat_room_screen.dart    # 채팅방 메시지 UI 및 전송 로직
----
+'''
 
 ### 📜 라이선스 (License)
 
