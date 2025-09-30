@@ -5,26 +5,26 @@
 <br>
 
 <table align="center">
-<tr>
-<td align="center"><b>로그인</b></td>
-<td align="center"><b>회원가입</b></td>
-<td align="center"><b>친구 목록</b></td>
-</tr>
-<tr>
-<td><img src="./assets/Login_Page.png" alt="로그인 화면" height="400"/></td>
-<td><img src="./assets/Register.png" alt="회원가입 화면" height="400"/></td>
-<td><img src="./assets/friend_list.png" alt="친구 목록 화면" height="400"/></td>
-</tr>
-<tr>
-<td align="center"><b>친구 추가</b></td>
-<td align="center"><b>채팅방</b></td>
-<td align="center"><b>전송 대기 메시지</b></td>
-</tr>
-<tr>
-<td><img src="./assets/add_friend.png" alt="친구 추가 화면" height="400"/></td>
-<td><img src="./assets/chat_page.png" alt="채팅방 화면" height="400"/></td>
-<td><img src="./assets/wait_for_msg.png" alt="전송 대기 화면" height="400"/></td>
-</tr>
+  <tr>
+    <td align="center"><b>로그인</b></td>
+    <td align="center"><b>회원가입</b></td>
+    <td align="center"><b>친구 목록</b></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/okjimin321/quickap/main/assets/Login_Page.png" alt="로그인 화면" height="400"/></td>
+    <td><img src="https://raw.githubusercontent.com/okjimin321/quickap/main/assets/Register.png" alt="회원가입 화면" height="400"/></td>
+    <td><img src="https://raw.githubusercontent.com/okjimin321/quickap/main/assets/chat_list_page.png" alt="친구 목록 화면" height="400"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>친구 추가</b></td>
+    <td align="center"><b>채팅방</b></td>
+    <td align="center"><b>전송 대기 메시지</b></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/okjimin321/quickap/main/assets/add_friend.png" alt="친구 추가 화면" height="400"/></td>
+    <td><img src="https://raw.githubusercontent.com/okjimin321/quickap/main/assets/chat_page.png" alt="채팅방 화면" height="400"/></td>
+    <td><img src="https://raw.githubusercontent.com/okjimin321/quickap/main/assets/wait_for_msg.png" alt="전송 대기 화면" height="400"/></td>
+  </tr>
 </table>
 
 ---
@@ -44,17 +44,17 @@
 ### ✨ 주요 기능 (Features)
 
 * **Firebase Authentication 기반 회원가입 및 로그인**
-* 이메일과 비밀번호로 간편하게 계정을 생성하고 안전하게 로그인할 수 있습니다.
+    * 이메일과 비밀번호로 간편하게 계정을 생성하고 안전하게 로그인할 수 있습니다.
 
 
 * **느린 배송 시스템**
-* 메시지 전송 시 배송 속도를 선택하여 의도적으로 지연된 소통을 경험할 수 있습니다.
-* 🚀 **특급 배송**: 30분 후 도착
-* 📦 **일반 배송**: 1시간 후 도착
-* 🐢 **보통 배송**: 3시간 후 도착
+    * 메시지 전송 시 배송 속도를 선택하여 의도적으로 지연된 소통을 경험할 수 있습니다.
+        * 🚀 **특급 배송**: 30분 후 도착
+        * 📦 **일반 배송**: 1시간 후 도착
+        * 🐢 **보통 배송**: 3시간 후 도착
 
 * **Firebase Cloud Firestore 기반 실시간 채팅**
-* 예정된 시간에 정확히 도착하는 메시지를 통해 친구와 편지처럼 대화할 수 있습니다.
+    * 예정된 시간에 정확히 도착하는 메시지를 통해 친구와 편지처럼 대화할 수 있습니다.
 
 ---
 
@@ -64,7 +64,7 @@
 | :--- | :--- |
 | **Frontend** | Flutter (Dart) |
 | **Backend** | Firebase Authentication, Cloud Firestore |
-| **State Management** | Provider (또는 사용하신 상태관리 기술) |
+| **State Management** | Provider |
 | **Deployment** | Android (향후 iOS 지원 예정) |
 
 ### 💻 오픈소스 활용 (Open-Source Software)
@@ -87,29 +87,28 @@
 
 #### **Installation & Run**
 1.  **프로젝트 클론**
-```bash
-git clone [https://github.com/okjimin321/quickap.git](https://github.com/okjimin321/quickap.git)
-cd quickap
-```
+    ```bash
+    git clone [https://github.com/okjimin321/quickap.git](https://github.com/okjimin321/quickap.git)
+    cd quickap
+    ```
 
 2.  **Flutter 패키지 설치**
-```bash
-   flutter pub get
-   ```
+    ```bash
+    flutter pub get
+    ```
 
 3.  **Firebase 설정**
-이 프로젝트는 Firebase를 사용하므로, 실행을 위해서는 본인의 Firebase 프로젝트 설정이 필요합니다.
-- [Firebase Console](https://console.firebase.google.com/)에서 새 프로젝트를 생성합니다.
-    - Android 앱을 추가하고, 안내에 따라 `google-services.json` 파일을 다운로드하여 `android/app/` 폴더에配置합니다.
-    - Android 앱을 추가하고, 안내에 따라 `google-services.json` 파일을 다운로드하여 `android/app/` 폴더에 삽입입합니다.
-- **Authentication** > **시작하기** > **로그인 제공업체**에서 **이메일/비밀번호**를 활성화합니다.
-- **Firestore Database** > **데이터베이스 만들기** > **테스트 모드**로 Firestore를 활성화합니다.
-- FlutterFire CLI를 사용하여 `lib/firebase_options.dart` 파일을 생성합니다. [참고 문서](https://firebase.flutter.dev/docs/cli)
+    이 프로젝트는 Firebase를 사용하므로, 실행을 위해서는 본인의 Firebase 프로젝트 설정이 필요합니다.
+    - [Firebase Console](https://console.firebase.google.com/)에서 새 프로젝트를 생성합니다.
+    - Android 앱을 추가하고, 안내에 따라 `google-services.json` 파일을 다운로드하여 `android/app/` 폴더에 삽입합니다.
+    - **Authentication** > **시작하기** > **로그인 제공업체**에서 **이메일/비밀번호**를 활성화합니다.
+    - **Firestore Database** > **데이터베이스 만들기** > **테스트 모드**로 Firestore를 활성화합니다.
+    - FlutterFire CLI를 사용하여 `lib/firebase_options.dart` 파일을 생성합니다. [참고 문서](https://firebase.flutter.dev/docs/cli)
 
 4.  **앱 실행**
-```bash
-   flutter run
-   ```
+    ```bash
+    flutter run
+    ```
 
 ---
 
@@ -131,7 +130,7 @@ lib/
 ### 🛣️ 향후 계획 (Roadmap)
 
 * [ ] iOS 플랫폼 지원
-* [ ] 사진 메시지 전송 기능 추가
+* [ ] 사진 전송 기능 추가
 * [ ] 다양한 메시지 지연 시간 옵션 제공 (예: 12시간, 24시간)
 * [ ] 메시지 도착 알림 기능 고도화
 
@@ -140,7 +139,7 @@ lib/
 ### 🧑‍💻 기여자 (Contributor)
 
 * **옥지민**: 아이디어, 앱 개발 및 디자인
-   * GitHub: [@okjimin321](https://github.com/okjimin321)
+    * GitHub: [@okjimin321](https://github.com/okjimin321)
 * **최유민**: 아이디어, 보고서 작성
 
 <br>
