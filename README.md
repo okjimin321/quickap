@@ -100,7 +100,7 @@
 3.  **Firebase 설정**
     이 프로젝트는 Firebase를 사용하므로, 실행을 위해서는 본인의 Firebase 프로젝트 설정이 필요합니다.
     - [Firebase Console](https://console.firebase.google.com/)에서 새 프로젝트를 생성합니다.
-    - Android 앱을 추가하고, 안내에 따라 `google-services.json` 파일을 다운로드하여 `android/app/` 폴더에配置합니다.
+    - Android 앱을 추가하고, 안내에 따라 `google-services.json` 파일을 다운로드하여 `android/app/` 폴더에 삽입입합니다.
     - **Authentication** > **시작하기** > **로그인 제공업체**에서 **이메일/비밀번호**를 활성화합니다.
     - **Firestore Database** > **데이터베이스 만들기** > **테스트 모드**로 Firestore를 활성화합니다.
     - FlutterFire CLI를 사용하여 `lib/firebase_options.dart` 파일을 생성합니다. [참고 문서](https://firebase.flutter.dev/docs/cli)
