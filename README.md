@@ -140,7 +140,7 @@ lib/
 ### 🧑‍💻 기여자 (Contributor)
 
 * **옥지민**: 아이디어, 앱 개발 및 디자인
-* GitHub: [@okjimin321](https://github.com/okjimin321)
+   * GitHub: [@okjimin321](https://github.com/okjimin321)
 * **최유민**: 아이디어, 보고서 작성
 
 <br>
